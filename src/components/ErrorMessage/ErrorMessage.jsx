@@ -1,5 +1,7 @@
-export default function ErrorMessage (){
-    return(
-        <p>Whoops, something went wrong! Please try reloading this page!</p>
-    )
+import css from './ErrorMessage.module.css'
+
+function ErrorMessage() {
+        return (<p>ERROR Message!!!</p>);
 }
+
+export default ErrorMessage
