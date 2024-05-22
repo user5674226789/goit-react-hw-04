@@ -1,3 +1,9 @@
-.modalImg{
-  height: 100px;
+.modalInfo {
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+}
+
+.modalText {
+    color: rgba(0, 0, 0, 0.71);
 }

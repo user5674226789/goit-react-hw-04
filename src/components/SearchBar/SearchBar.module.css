@@ -1,35 +1,29 @@
-.header{
-    background-color: rgb(120, 120, 255);
-    margin: 0;
-    display: block;
-   
-}
-
-.form{
+.button {
     display: flex;
-    justify-content: center;    
-    padding: 10px;
-    gap: 10px;  
+    padding: 5px;
+    width: 120px;
+    margin: 10px auto 10px;
+    justify-content: center;
+    background-color: aliceblue;
+    color: rgba(0, 0, 0, 0.556);
+    border-width: 2px;
+    border-style: inset;
+    border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
 }
 
-.input{
-    padding: 10px;
-    color: black;
-    font-size: medium;
-    font-weight: 400;
-    border: none;
-    border-radius: 5px;
-}
-
-.btn{
+.form {
     display: flex;
-    border: 1px solid black;
-    border-radius: 8px;
-    background-color: rgb(78, 78, 78);
-    color: white;
-    padding: 10px;
-    font-weight: 500;
-    font-size: medium;
-  justify-content: center;
+    width: 400px;
+    align-items: center
+}
 
+.input {
+    width: 300px;
+    height: 28px;
+    border-radius: 7px;
+    margin-right: 10px;
+    background-color: aliceblue;
+    color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    ;
 }

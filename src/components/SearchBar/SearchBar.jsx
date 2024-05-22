@@ -1,42 +1,27 @@
-import toast, { Toaster } from "react-hot-toast";
+import { Field, Form, Formik } from 'formik';
+import css from './SearchBar.module.css';
+import toast from 'react-hot-toast';
 
-import css from "./SearchBar.module.css";
-
-export default function SearchBar({ onSearch }) {
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    const form = evt.target;
-    const searchImg = form.elements.searchImg.value;
-
-    if (searchImg.trim() === "") {
-      toast("Please fill in search folder", {
-        style: {
-          color: 'red',   
-        },
-      });
-      return;
-    }
-
-    onSearch(searchImg);
-    form.reset();
-  };
-
-  return (
-    <header className={css.header}>
-      <form className={css.form} onSubmit={handleSubmit}>
-        <input
-          className={css.input}
-          type="text"
-          name="searchImg"
-           autoComplete="off"
-          autoFocus
-          placeholder="Search images and photos"
-        />
-        <button className={css.btn} type="submit">
-          Search
-        </button>
-        <Toaster />
-      </form>
-    </header>
+function SearchBar({ onSearch }) {
+    return (
+    <Formik
+      initialValues={{ query: "" }}
+        onSubmit={(values, actions) => {
+          if (values.query.trim() !== '') {
+            onSearch(values.query);
+          actions.resetForm();
+          } else {
+           toast.error("The search field is empty. Please try again!");
+          }
+          return
+      }}
+    >
+      <Form className={css.form}>
+        <Field className={css.input} type="text" name="query" placeholder="   Search images and photos" />
+        <button className={css.button} type="submit">Search</button>
+      </Form>
+    </Formik>
   );
-}
+};
+
+export default SearchBar

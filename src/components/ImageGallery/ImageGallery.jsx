@@ -1,14 +1,22 @@
-import ImageCard from "../ImageCard/ImageCard";
-import css from "./ImageGallery.module.css";
+import ImageCard from '../ImageCard/ImageCard'
+import css from './ImageGallery.module.css'
 
-export default function ImageGallery({ items, onImageClick }) {
-  return (
-    <ul className={css.imgList}>
-      {items.map(({ id, urls, slug }) => (
-        <li key={id}>
-          <ImageCard imgLink={urls} imgSlug={slug} onClick={onImageClick} />
-        </li>
-      ))}
-    </ul>
-  );
+function ImageGallery({data, openModal, onAfterOpen}) {
+    return (
+        <ul className={css.gallery}>
+            {data.map(photo => {
+                return (
+                    <li key={photo.id} className={css.galleryItem}>
+                        <ImageCard
+                            photo={photo}
+                            openModal={openModal}
+                            onAfterOpen={onAfterOpen}
+                        />
+                    </li>
+                );
+            })}
+        </ul>
+    );
 }
+
+export default ImageGallery

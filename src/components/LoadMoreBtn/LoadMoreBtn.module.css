@@ -1,13 +1,13 @@
-.btnmore{
-     border: 1px solid black;
-    border-radius: 8px;
-    background-color: rgb(78, 78, 78);
-    color: white;
-    padding: 10px;
-    font-weight: 500;
-    font-size: medium;
+.button {
     display: flex;
+    padding: 5px;
+    width: 120px;
+    margin: 10px auto 10px;
     justify-content: center;
-    margin: 10px auto;
-
+    background-color: rgb(147, 207, 244);
+    color: rgba(0, 0, 0, 0.556);
+    border-width: 2px;
+    border-style: inset;
+    border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
 }
